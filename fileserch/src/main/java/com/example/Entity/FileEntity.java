@@ -15,6 +15,9 @@ import java.io.Serializable;
 @Setter
 public class FileEntity implements Serializable {
 
+
+
+
     /**
      * 唯一标识id
      */

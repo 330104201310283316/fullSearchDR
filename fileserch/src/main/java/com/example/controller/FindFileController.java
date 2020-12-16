@@ -26,6 +26,7 @@ public class FindFileController {
     public ServerResponse findFile(String searchContent, HttpServletRequest request) {
 
         //获取访问者ip
+        System.out.println();
         System.out.println(IpUtil.getIpAddr(request));
         FileEntityList list = null;
         try {

@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>道然搜索</title>
+<link rel="stylesheet" href="./css/common.css" />
+</head>
+<body>
+	<div class="search-page">
+		<div class="search-warp">
+			<div class="search-box">
+				<div class="logo">
+					<img class="logo-img" src="img/Tao.png" />
+				</div>
+				<div class="search-bar">
+					<input id="search" class="search-input" />
+					<button class="search-btn" onclick="querylist()">搜索</button>
+				</div>
+			</div>
+		</div>
+		<div class="list-warp">
+			<p class="total">为您找到相关结果约<span id="total">0</span>个</p>
+			<div class="list">
+			</div>
+		</div>
+			
+		<div class="modal-bg" id="myModal">
+			<div class="reveal-modal">
+				<p class="model-p1">文档已加密</p>
+				<p class="model-p2">此文档为加密文档，请输入文档密码</p>
+				<div class="pass-warp">
+					<input class="pass-input" type="password" placeholder="文件已加密请输入密码"/>
+					<img class="pass-icon" src="img/close.png" />
+				</div>
+                <p class="error"></p>
+				<div class="btn-warp">
+					<button id="submit" onclick="submitForm()">确定</button>
+					<button id="cancel">取消</button>
+				</div>
+			</div>	
+		</div>
+		<div class="loading">
+		    <div class="loading-warp">
+		        <img class="loading-img" src="img/loading.gif" />
+		        <p class="loading-text">加载中</p>
+		    </div>
+		</div>
+	</div>
+<script src="./js/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/Base64/1.1.0/base64.min.js"></script>
+<script src="./js/index.js"></script>
+</body>
+</html>
