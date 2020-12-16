@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>道然搜索</title>
+<link rel="stylesheet" href="./css/common.css" />
+</head>
+<body>
+	<div class="search-warp">
+		<div class="search-box">
+			<div class="logo">
+				<img class="logo-img" src="img/Tao.png" />
+			</div>
+			<div class="search-bar">
+				<input id="search" class="search-input" />
+				<button class="search-btn" onclick="goDefault()">搜索</button>
+			</div>
+		</div>
+	</div>
+	<div class="show" id="show">
+		<div class="pdf-warp">
+			<iframe style="display: none;" height="auto" id="pdf" width="100%" frameBorder="0" scrolling="no"></iframe>
+			<div class="s-search"><span onclick="goSearch()">搜索</span> / <span onclick="copy()" id="clone-btn">复制</span></div>
+		</div>
+	</div>
+    <div class="loading">
+        <div class="loading-warp">
+            <img class="loading-img" src="img/loading.gif" />
+            <p class="loading-text">加载中</p>
+        </div>
+    </div>
+<script>
+	
+</script>
+<script src="./js/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/Base64/1.1.0/base64.min.js"></script>
+<script src="./js/show.js"></script>
+</body>
+</html>

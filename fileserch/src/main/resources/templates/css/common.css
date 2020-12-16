@@ -1,0 +1,273 @@
+/* 搜索页样式 */
+body,p{
+	margin: 0;
+	padding: 0;
+	font-family: Microsoft YaHei;
+}
+.search-page{
+	width: 100%;
+	margin: 0 auto;
+}
+.search-warp{
+	width: 100%;
+	height: 154px;
+	background: url(../img/bg.png) no-repeat;
+	background-size: 100% 100%;
+}
+.search-box{
+	width: 1000px;
+	margin: 0 auto;
+	height: 154px;
+}
+.search-bar{
+	float: left;
+}
+.logo{
+	float: left;
+	width: 130px;
+}
+.logo-img{
+	width: 90%;
+	margin-top: 40px;
+}
+.title{
+	font-size: 28px;
+	font-weight: bold;
+	color: #EDEDED;
+	float: left;
+	line-height: 154px;
+	width: 130px;
+}
+.list-warp{
+	width: 1000px;
+	margin-top: 70px;
+	margin: 0 auto;
+}
+.list{
+	padding-left: 130px;
+}
+.list-box{
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 20px;
+	margin-top: 20px;
+}
+.list-icon{
+	width: 25px;
+	height: 25px;
+	float: left;
+	display: block;
+	margin-right: 16px;
+}
+.list-title{
+	font-size: 18px;
+	font-family: Microsoft YaHei;
+	font-weight: bold;
+	color: #FF6633;
+	cursor: pointer;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}
+.list-title:hover{
+	color: 1 solid #2121D3;
+}
+.list-sub{
+	font-size: 13px;
+	padding-top: 15px;
+	font-family: Microsoft YaHei;
+	font-weight: 400;
+	color: #333333;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+}
+.list-add{
+	font-size: 13px;
+	padding-top: 5px;
+	font-family: Microsoft YaHei;
+	font-weight: 400;
+	color: #999999;
+	padding-left: 40px;
+}
+.search-input{
+	width: 500px;
+	height: 40px;
+	border-radius: 5px 0 0 5px;
+	border: 0;
+	margin-top: 58px;
+}
+.search-btn{
+	width: 100px;
+	background-color: #ff7752;
+	color: #fff;
+	cursor: pointer;
+	border: none;
+	height: 42px;
+	font-size: 16px;
+	vertical-align:middle;
+	margin-left: -5px;
+}
+.search-btn:focus {
+	outline:none;
+}
+.search-input:focus {
+	outline:none;
+	border:none;
+}
+.total{
+	font-size: 13px;
+	font-weight: 400;
+	color: #999999;
+	padding-left: 130px;
+	padding-top: 24px;
+	padding-bottom: 20px;
+}
+.no-page-img{
+	padding-top: 70px;
+	padding-left: 100px;
+}
+.no-page-text{
+	padding-left: 200px;
+}
+#total{
+	color: #FF6633;
+}
+
+
+/* 展示页样式 */
+.pdf-warp{
+	width: 80%;
+	margin: 0 auto;
+	/* padding: 30px; */
+}
+.s-search{
+	position: absolute;
+	top:0;
+	left:0;
+	color: blue;
+	display: none;
+	font-size: 15px;
+	border: 1px solid #ddd;
+	background-color: #fff;
+	padding: 2px 5px 2px 5px;
+	cursor: pointer;
+	border-radius: 4px;
+	letter-spacing: 3px;
+}
+.s-search :hover{
+	color: #ff7752;
+}
+.lock-warp{
+	clear: both;
+	height: 40px;
+}
+.lcok-icon{
+	width: 30px;
+	height: 30px;
+	margin-top: 5px;
+	margin-left: 40px;
+	float: left;
+}
+.lcok-text{
+	font-size: 12px;
+	padding-left: 10px;
+	color: #333;
+	float: left;
+	line-height: 40px;
+}
+
+/* model */
+.modal-bg {
+	position:fixed;
+	height: 100%;
+	width: 100%;
+	background: rgba(0,0,0,.7);
+	z-index: 100;
+	display: none;
+	top: 0;
+	left: 0;
+}
+
+.reveal-modal {
+	width: 300px;
+	background-color: #fff;
+	position: absolute;
+	bottom:50%;
+	left: 50%;
+	margin-left: -150px;
+	border-radius: 8px;
+	padding: 30px;
+}
+.model-p1{
+	font-size: 20px;
+	color: #ff7752;
+}
+.model-p2{
+	font-size: 14px;
+	padding-top: 20px;
+	padding-bottom: 10px;
+}
+.pass-warp{
+	width: 100%;
+	border: 1px solid #999999;
+	height: 30px;
+}
+.pass-input{
+	outline:none;
+	line-height: 26px;
+	border-radius: 3px;
+	font-size: 12px;
+	width: 87%;
+	border: none;
+	float: left;
+}
+.pass-icon{
+	float: left;
+	display: block;
+	margin-top: 8px;
+	cursor: pointer;
+}
+.btn-warp{
+	margin-top: 30px;
+	text-align: right;
+}
+.btn-warp button{
+	width: 70px;
+	height: 30px;
+	outline: none;
+}
+.btn-warp button:hover{
+	background-color:#ff7752 ;
+	cursor: pointer;
+	border: none;
+	color: #fff;
+}
+.error{
+	font-size: 14px;
+	color: red;
+	padding-top: 3px;
+	height: 20px;
+}
+
+
+/* model */
+.loading {
+	position:fixed;
+	height: 100%;
+	width: 100%;
+	background: rgba(255,255,255,0.8);
+	z-index: 100;
+	display: none;
+	top: 0;
+	left: 0;
+}
+.loading-warp{
+	width: 100px;
+	position: absolute;
+	bottom:50%;
+	left: 50%;
+	margin-left: -50px;
+	text-align: center;
+}
