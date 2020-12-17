@@ -81,23 +81,15 @@
 	
     function firstSubmit(path){
         var spath1=decodeURIComponent(atob(path))
-        $.post(Url+"/file/checkFilePwd",{filePath:spath1},function(){
-             window.loaded=true;
+        $.post(Url+"/file/checkFilePwd",{filePath:spath1},function(res){
+            if(res.state == 200){
+                window.loaded=true;
+            }else{
+                window.location.href = "error.html";
+            }
         });
     }
 	
-     function showLoading(){
-        //$(".loading").css("display","block");
-     }
-     function loadSuccess(path){
-        $(".loading").css("display","none");
-        window.open("show.html?file="+path)
-     }
-     function loadFailed(){
-        $('.loading-img').attr("src","img/fail.png");
-        $('.loading-text').html('请求超时')
-    }
-    
     function submitForm(){
         var spath1=decodeURIComponent(atob(window.spath))
         var passValue = $(".pass-input").val();
@@ -106,25 +98,12 @@
         }else{
           $.post(Url+"/file/checkFilePwd",{filePath:spath1,pwd:passValue},function(data){
             	if(data && data.state == 200){
+                    window.open("show.html?file="+spath);
                     $("#myModal").hide();
                     $(".pass-input").val("");
                     $('.error').html('')
-                    showLoading()
-                   var time = 0;
-                   var inter = setInterval(function(){
-                       if(time>=20||window.loaded) {
-                           clearInterval(inter);
-                           inter = null;
-                           if(window.loaded)
-                           loadSuccess(spath);
-                           else
-                           loadFailed();
-                       }else{
-                           time = time+0.5;
-                       }
-                   },500);
                 }else{
-                    $('.error').html('密码错误')
+                    $('.error').html(data.msg)
                 }
           });
         }

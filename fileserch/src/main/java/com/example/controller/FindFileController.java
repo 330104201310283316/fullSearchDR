@@ -74,6 +74,9 @@ public class FindFileController {
         try {
             filePathUrl = java.net.URLDecoder.decode(filePath, ENCODE);
             fileEntity = findFileService.getFileToHtmlUrl(filePathUrl);
+            if (fileEntity.getFileUrl() == null) {
+                return ServerResponse.fail(ResponseCode.TOHTML_ERROR);
+            }
         } catch (Exception e) {
             e.printStackTrace();
             return ServerResponse.failOfCodeAndMsg(ResponseCode.INTERNAL_SERVER_ERROR.getCode(), "系统内部异常");

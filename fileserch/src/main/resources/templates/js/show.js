@@ -39,8 +39,7 @@ function queryUrl(newPath){
 				//fileUrl = 'http://192.168.3.158:8080/group/121212.html';
 				iframe.setAttribute("src",fileUrl);
 			}else{
-                $('.loading-img').attr("src","img/fail.png");
-                $('.loading-text').html('请求超时')
+                window.location.href = "error.html";
             }
 		}			
 	})
@@ -78,12 +77,10 @@ iframe.onload = function () {
 	if(frame !== iframe){
 		
 		frame.onload = function () {
-			//console.log(11111);
 			addListener(frame);
 			
 		}
 		frame.onunload = function(){
-			//console.log(2222);
 			removeListener(frame);
 		}
 	}
@@ -115,10 +112,8 @@ function addListener(frame){
 		  return;
 	  }
 	  
-	  const selectionPosition = getSelectionTopLeft(frame);
-      
+	  const selectionPosition = getSelectionTopLeft(frame); 
 	  const rect = iframe.getBoundingClientRect();
-      
       const rx = rect.x || rect.left;
       const ry = rect.y || rect.top;
 	  const left = selectionPosition.x+(selectionPosition.width)/2 +rx;
@@ -133,7 +128,6 @@ function addListener(frame){
 	  selectText = choose;
 	}, true);
 }
-
 
 function getSelectionTopLeft(iframe) {
 	var x = 0, y = 0;
@@ -190,14 +184,12 @@ function ncopy(content, message) {
 
 function iFrameHeight() {
 	var ifm= document.getElementById("pdf");
-		//ifm.style.display="block";
 	var subIframe = getIFrame(ifm);
 	var subWeb = getIFrameDoc(subIframe);
     //console.log(subWeb.body.scrollHeight);
 	if(ifm != null && subWeb != null) {
 		ifm.style.height = 'auto';
 		ifm.style.display = 'block';
-		//subIframe.setAttribute("scrolling","no");
 		ifm.style.height = (subWeb.body.scrollHeight+100)+'px';
     }
  };

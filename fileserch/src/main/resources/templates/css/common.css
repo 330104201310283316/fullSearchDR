@@ -64,9 +64,9 @@ body,p{
 	font-weight: bold;
 	color: #FF6633;
 	cursor: pointer;
-	overflow: hidden;
-	text-overflow:ellipsis;
-	white-space: nowrap;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
 }
 .list-title:hover{
 	color: 1 solid #2121D3;
@@ -160,34 +160,34 @@ body,p{
 	color: #ff7752;
 }
 .lock-warp{
-	clear: both;
-	height: 40px;
+    clear: both;
+    height: 40px;
 }
 .lcok-icon{
 	width: 30px;
 	height: 30px;
 	margin-top: 5px;
-	margin-left: 40px;
-	float: left;
+    margin-left: 40px;
+    float: left;
 }
 .lcok-text{
-	font-size: 12px;
-	padding-left: 10px;
-	color: #333;
-	float: left;
-	line-height: 40px;
+    font-size: 12px;
+    padding-left: 10px;
+    color: #333;
+    float: left;
+    line-height: 40px;
 }
 
 /* model */
-.modal-bg {
-	position:fixed;
+.modal-bg { 
+	position:fixed; 
 	height: 100%;
 	width: 100%;
 	background: rgba(0,0,0,.7);
 	z-index: 100;
 	display: none;
 	top: 0;
-	left: 0;
+	left: 0; 
 }
 
 .reveal-modal {
@@ -222,6 +222,7 @@ body,p{
 	width: 87%;
 	border: none;
 	float: left;
+    font-family: Microsoft YaHei;
 }
 .pass-icon{
 	float: left;
@@ -245,29 +246,60 @@ body,p{
 	color: #fff;
 }
 .error{
-	font-size: 14px;
-	color: red;
-	padding-top: 3px;
-	height: 20px;
+    font-size: 14px;
+    color: red;
+    padding-top: 3px;
+    height: 20px;
 }
 
 
 /* model */
-.loading {
-	position:fixed;
+.loading { 
+	position:fixed; 
 	height: 100%;
 	width: 100%;
 	background: rgba(255,255,255,0.8);
 	z-index: 100;
 	display: none;
 	top: 0;
-	left: 0;
+	left: 0; 
 }
 .loading-warp{
-	width: 100px;
-	position: absolute;
-	bottom:50%;
-	left: 50%;
-	margin-left: -50px;
-	text-align: center;
+   width: 100px;
+   position: absolute;
+   bottom:50%;
+   left: 50%;
+   margin-left: -50px;
+   text-align: center;
+}
+.err-warp{
+    width: 1000px;
+    margin: 0 auto;
+}
+.fail-err-img{
+   display: block;
+   text-align: center;
+   width: 162px;
+   height: 132px;
+   margin: 0 auto;
+   margin-top: 200px;
+}
+.fail-err-text{
+    text-align: center;
+    font-size: 18px;
+    padding-top: 30px;
+    font-weight: bold;
+}
+.fail-err-btn{
+  background-color:#ff7752 ;
+  cursor: pointer;  
+  width: 100px;
+  height: 40px;
+  text-align: center;
+  color: #fff;
+  border: 0;
+  margin: 0 auto;
+  display: block;
+  margin-top: 30px;
+  line-height: 40px;
 }

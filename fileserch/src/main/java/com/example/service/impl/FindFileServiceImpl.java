@@ -62,6 +62,7 @@ public class FindFileServiceImpl implements FindFileService {
         if (fileStrUrl == null) {
             return null;
         }
+        fileEntity.setFileUrl(webApiUrl+fileStrUrl);
         return fileEntity;
     }
 
