@@ -73,6 +73,7 @@ public class FindFileServiceImpl implements FindFileService {
     public static void main(String[] args) {
         //传参查询
         System.out.println(ToHtml.checkPwd("D:\\luceneSource\\c\\新建 DOCX 文档_lock.docx", "123"));
+        System.out.println(ToHtml.checkPwd("D:\\luceneSource\\c\\新建 DOCX 文档_lock.docx", "123"));
     }
 
 }
