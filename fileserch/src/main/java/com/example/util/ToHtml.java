@@ -44,7 +44,8 @@ public class ToHtml {
      * @param targetPath
      */
     public static boolean wordToHtml(String sourcePath, String targetPath) {
-        if (appWordComponent == null) {
+        ComThread.InitSTA();
+        if (appWordComponent == null || appWordComponent.m_pDispatch == 0) {
             appWordComponent = new ActiveXComponent("Word.Application");
         }
         try {
@@ -63,11 +64,13 @@ public class ToHtml {
             Dispatch.call(docs, "Close", new Variant(false));
         } catch (Exception e) {
             e.printStackTrace();
-            appWordComponent.invoke("Quit", new Variant[]{});
+            appWordComponent = null;
             return false;
         } finally {
             // 关闭word应用程序
-            //   appWordComponent.invoke("Quit", new Variant[]{});
+            appWordComponent.invoke("Quit", new Variant[]{});
+            ComThread.Release();
+            ComThread.quitMainSTA();
         }
         return true;
     }
@@ -79,9 +82,9 @@ public class ToHtml {
      * @param targetPath
      */
     public static boolean excelToHtml(String sourcePath, String targetPath) {
-
+        ComThread.InitSTA();
         try {
-            if (appExcelComponent == null)
+            if (appExcelComponent == null || appExcelComponent.m_pDispatch == 0)
                 appExcelComponent = new ActiveXComponent("Excel.Application");
             appExcelComponent.setProperty("Visible", new Variant(false));
             Dispatch excels = appExcelComponent.getProperty("Workbooks").toDispatch();
@@ -92,10 +95,14 @@ public class ToHtml {
                     targetPath, new Variant(EXCEL_HTML)}, new int[1]);
             Dispatch.call(excel, "Close", new Variant(false));
         } catch (Exception e) {
+            e.printStackTrace();
+            appExcelComponent = null;
             return false;
         } finally {
             // 关闭excel应用程序
             //appExcelComponent.invoke("Quit", new Variant[]{});
+            ComThread.Release();
+            ComThread.quitMainSTA();
         }
         return true;
     }
@@ -218,7 +225,6 @@ public class ToHtml {
         String str = fileTemp + SubStrUtil.subBeginString(toHmlFile.getName(), ".", 0) + sdf.format(new Date(toHmlFile.lastModified())) + toHmlFile.length() + ".html";
         File htmlFile = new File(str);
         try {
-            System.out.println(str);
             //判断文件是否存在，如果存在则直接返回文件名称
             if (!htmlFile.exists()) {
                 String fileNameSub = toHmlFile.getName();
@@ -246,6 +252,7 @@ public class ToHtml {
                 }
             }
         } catch (Exception e) {
+            e.printStackTrace();
             System.out.println("转换失败，返回null");
             return null;
         }
